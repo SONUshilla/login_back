@@ -16,7 +16,7 @@ app.use(cors({
   origin: 'https://login-front-ar4e.onrender.com',
   credentials: true,
   methods: 'GET,POST',
-  allowedHeaders: 'Content-Type'
+  allowedHeaders: 'Content-Type',
 }));
 
 app.use(express.json());
@@ -24,10 +24,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
   secret: 'your_secret_key', // replace with your own secret key
-  resave: false,
-  saveUninitialized: false,
+  resave: true,
+  saveUninitialized: true,
   cookie:{
-  sameSite:"none"
+   sameSite:"lax",
+   secure:true,
   }
 }));
 
