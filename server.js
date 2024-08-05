@@ -13,7 +13,7 @@ const PASSWORD = 'password';
 
 // CORS configuration
 app.use(cors({
-  origin: 'https://login-front-ar4e.onrender.com',
+  origin: 'http://localhost:5173',
   credentials: true,
   methods: 'GET,POST',
   allowedHeaders: 'Content-Type',
@@ -27,8 +27,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   cookie:{
-   sameSite:"none",
-   secure:true,
+   secure:false,
   }
 }));
 
