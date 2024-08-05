@@ -25,7 +25,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({
   secret: 'your_secret_key', // replace with your own secret key
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie:{
+  sameSite:"none"
+  }
 }));
 
 app.use(passport.initialize());
